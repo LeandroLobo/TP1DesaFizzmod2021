@@ -28,9 +28,7 @@ Crear un repo en github y subir todo el proyecto.
 Se ignorará la carpeta node_modules (para ellos está creado el archivo .gitignore en este proyecto) 
 Esta función devolverá un string con la url del repo.
 */
-function urlRepo() {
-  return
-}
+const urlRepo = () => 'https://github.com/LeandroLobo/TP1DesaFizzmod2021.git';
 
 /* 
 Crear una función arrow, que devuelva una clase en ES6 que contendrá dos métodos llamados contadorPalabras y hayNumeros. La clase recibirá un texto que se guardará en una propiedad llamada texto. contadorPalabras retornará la cantidad de palabras encontradas en la propiedad texto y hayNumeros devolverá true en caso de que encuentre un número en dicho texto, caso contrario retorna false. En ambos métodos, si el texto no es válido, se devolverá -1

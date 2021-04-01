@@ -44,18 +44,130 @@ const crearClase = () => class Retorno {
 
   static contadorInstancias = 0;
   
-  constructor(texto = '') {
-    this.texto = texto;
-    Retorno.contadorInstancias += 1;
+  constructor(texto) {
+    this.texto = (typeof texto === 'string') ? texto : -1;
+    Retorno.contadorInstancias++;
+  }
+
+  contadorPalabras() {
+    if(this.texto === -1) return -1;
+    const palabras = this.texto.trim().split(' ');
+    return (this.texto.trim() !== '') ? palabras.length : 0;
+  }
+  hayNumeros() {
+    if(this.texto === -1) return -1;
+    const numeros = this.texto.match(new RegExp("0|1|2|3|4|5|6|7|8|9",'g'));
+    return (numeros !== null) ? true : false;
   }
 
 }
 
-const Clase = crearClase()
-console.log(typeof Clase.contadorInstancias, Clase.contadorInstancias)
-const objeto = new Clase('perro que ladra no muerde');
-console.log(typeof Clase.contadorInstancias, Clase.contadorInstancias)
-console.log(objeto.texto)
+// TEST //
+console.log(`
+------------------------------------------------------
+expect(typeof crearClase()).toEqual('function')
+result: ${typeof crearClase()}
+------------------------------------------------------
+`);
+
+{
+  const Clase = crearClase()
+  new Clase()
+  new Clase()
+  new Clase()
+  console.log(`
+  ------------------------------------------------------
+  const Clase = crearClase()
+  new Clase()
+  new Clase()
+  new Clase()
+  expect(Clase.contadorInstancias).toEqual(3)
+  result: ${Clase.contadorInstancias}
+  ------------------------------------------------------
+  `);
+}
+{
+  const Clase = crearClase()
+  const objeto = new Clase()
+  console.log(`
+  ------------------------------------------------------
+  const Clase = crearClase()
+  const objeto = new Clase()
+  expect(objeto.contadorPalabras()).toEqual(-1)
+  result: ${objeto.contadorPalabras()}
+  expect(objeto.hayNumeros()).toEqual(-1)
+  result: ${objeto.hayNumeros()}
+  ------------------------------------------------------
+  `);
+}
+{
+  const Clase = crearClase()
+  let objeto = new Clase('Hola mundo como están')
+  console.log(`
+  ------------------------------------------------------
+  const Clase = crearClase()
+  let objeto = new Clase('Hola mundo como están')
+  expect(objeto.contadorPalabras()).toEqual(4)
+  result: ${objeto.contadorPalabras()}
+  ------------------------------------------------------
+  `)
+  objeto = new Clase('')
+  console.log(`
+  ------------------------------------------------------
+  objeto = new Clase('')
+  expect(objeto.contadorPalabras()).toEqual(0)
+  result: ${objeto.contadorPalabras()}
+  ------------------------------------------------------
+  `)
+  objeto = new Clase('Hola')
+  console.log(`
+  ------------------------------------------------------
+  objeto = new Clase('Hola')
+  expect(objeto.contadorPalabras()).toEqual(1)
+  result: ${objeto.contadorPalabras()}
+  ------------------------------------------------------
+  `)
+}
+{
+  const Clase = crearClase()
+  let objeto = new Clase('Hola mundo como están')
+  console.log(`
+  ------------------------------------------------------
+  const Clase = crearClase()
+  let objeto = new Clase('Hola mundo como están')
+  expect(objeto.hayNumeros()).toBe(false)
+  result: ${objeto.hayNumeros()}
+  ------------------------------------------------------
+  `)
+  
+  objeto = new Clase('')
+  console.log(`
+  ------------------------------------------------------
+  objeto = new Clase('')
+  expect(objeto.hayNumeros()).toBe(false)
+  result: ${objeto.hayNumeros()}
+  ------------------------------------------------------
+  `)
+  
+  objeto = new Clase('Hola mundo como están 1')
+  console.log(`
+  ------------------------------------------------------
+  objeto = new Clase('Hola mundo como están 1')
+  expect(objeto.hayNumeros()).toBe(true)
+  result: ${objeto.hayNumeros()}
+  ------------------------------------------------------
+  `)
+  
+  objeto = new Clase('123')
+  console.log(`
+  ------------------------------------------------------
+  objeto = new Clase('123')
+  expect(objeto.hayNumeros()).toBe(true)
+  result: ${objeto.hayNumeros()}
+  ------------------------------------------------------
+  `)
+}
+
 
 
 module.exports = {

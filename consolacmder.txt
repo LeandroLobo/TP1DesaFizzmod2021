@@ -1,0 +1,940 @@
+    × debería devolver un repo válido de github (2ms)
+  clase en ES6
+    × debería retornar una clase (6ms)
+    × debería devolver la cantidad de instancias adecuada (3ms)
+    × Los métodos deberían devolver -1 para un texto no válido (3ms)
+    × El método contadorPalabras debe devolver un valor adecuado (3ms)
+    × El método hayNumeros debe devolver un valor adecuado (4ms)
+
+  ● contador de vocales › debería retornar la cantidad de vocales
+
+    TypeError: Cannot read property 'length' of null
+
+       5 | Si se no se recibe un string retornará -1.
+       6 | */
+    >  7 | const contarVocales = texto => (typeof texto === 'string') ? texto.toLowerCase().match(new RegExp("a|e|i|o|u",'g')).length : -1;
+       8 |
+       9 | /*
+      10 | Crear un repo en github y subir todo el proyecto.
+
+      at contarVocales (tp.js:7:62)
+      at Object.<anonymous> (tests/tp.test.js:20:11)
+
+  ● url repo github › debería retornar un string
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "string"
+    Received:
+      "undefined"
+
+      25 | describe('url repo github', function() {
+      26 |  it('debería retornar un string', function() {
+    > 27 |    expect(typeof urlRepo()).toEqual('string');
+      28 |  });
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:27:29)
+
+  ● url repo github › debería devolver un repo válido de github
+
+    TypeError: Cannot read property 'includes' of undefined
+
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+    > 31 |   expect(urlRepo().includes('https://github.com/')).toBe(true);
+      32 |   expect(urlRepo().includes('.git')).toBe(true);
+      33 |  });
+      34 | });
+
+      at Object.<anonymous> (tests/tp.test.js:31:10)
+
+  ● clase en ES6 › debería retornar una clase
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "function"
+    Received:
+      "undefined"
+
+      36 | describe('clase en ES6', function() {
+      37 |   it('debería retornar una clase', function() {
+    > 38 |     expect(typeof crearClase()).toEqual('function');
+      39 |   });
+      40 |
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:38:33)
+
+  ● clase en ES6 › debería devolver la cantidad de instancias adecuada
+
+    TypeError: Clase is not a constructor
+
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+      42 |    const Clase = crearClase()
+    > 43 |    new Clase()
+      44 |    new Clase()
+      45 |    new Clase()
+      46 |    expect(Clase.contadorInstancias).toEqual(3);
+
+      at Object.<anonymous> (tests/tp.test.js:43:4)
+
+  ● clase en ES6 › Los métodos deberían devolver -1 para un texto no válido
+
+    TypeError: Clase is not a constructor
+
+      49 |   it('Los métodos deberían devolver -1 para un texto no válido', function() {
+      50 |     const Clase = crearClase()
+    > 51 |     const objeto = new Clase()
+      52 |     expect(objeto.contadorPalabras()).toEqual(-1);
+      53 |     expect(objeto.hayNumeros()).toEqual(-1);
+      54 |    });
+
+      at Object.<anonymous> (tests/tp.test.js:51:20)
+
+  ● clase en ES6 › El método contadorPalabras debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      57 |     const Clase = crearClase()
+      58 |
+    > 59 |     let objeto = new Clase('Hola mundo como están')
+      60 |     expect(objeto.contadorPalabras()).toEqual(4);
+      61 |
+      62 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:59:18)
+
+  ● clase en ES6 › El método hayNumeros debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      70 |     const Clase = crearClase()
+      71 |
+    > 72 |     let objeto = new Clase('Hola mundo como están')
+      73 |     expect(objeto.hayNumeros()).toBe(false);
+      74 |
+      75 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:72:18)
+
+Test Suites: 1 failed, 1 total
+Tests:       8 failed, 2 passed, 10 total
+Snapshots:   0 total
+Time:        6.873s, estimated 36s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1  (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js (5.14s)
+  contador de vocales
+    √ debería retornar un número (21ms)
+    √ debería retornar un -1 cuando no recibe un string (2ms)
+    × debería retornar la cantidad de vocales (87ms)
+  url repo github
+    × debería retornar un string (20ms)
+    × debería devolver un repo válido de github (3ms)
+  clase en ES6
+    × debería retornar una clase (5ms)
+    × debería devolver la cantidad de instancias adecuada (3ms)
+    × Los métodos deberían devolver -1 para un texto no válido (3ms)
+    × El método contadorPalabras debe devolver un valor adecuado (3ms)
+    × El método hayNumeros debe devolver un valor adecuado (2ms)
+
+  ● contador de vocales › debería retornar la cantidad de vocales
+
+    TypeError: Cannot read property 'length' of null
+
+       5 | Si se no se recibe un string retornará -1.
+       6 | */
+    >  7 | const contarVocales = texto => (typeof texto === 'string') ? texto.toLowerCase().match(new RegExp("a|e|i|o|u",'g')).length : -1;
+       8 | // const perro = 'Hola como están';
+       9 | // console.log(typeof perro, contarVocales(perro))
+      10 | /*
+
+      at contarVocales (tp.js:7:62)
+      at Object.<anonymous> (tests/tp.test.js:20:11)
+
+  ● url repo github › debería retornar un string
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "string"
+    Received:
+      "undefined"
+
+      25 | describe('url repo github', function() {
+      26 |  it('debería retornar un string', function() {
+    > 27 |    expect(typeof urlRepo()).toEqual('string');
+      28 |  });
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:27:29)
+
+  ● url repo github › debería devolver un repo válido de github
+
+    TypeError: Cannot read property 'includes' of undefined
+
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+    > 31 |   expect(urlRepo().includes('https://github.com/')).toBe(true);
+      32 |   expect(urlRepo().includes('.git')).toBe(true);
+      33 |  });
+      34 | });
+
+      at Object.<anonymous> (tests/tp.test.js:31:10)
+
+  ● clase en ES6 › debería retornar una clase
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "function"
+    Received:
+      "undefined"
+
+      36 | describe('clase en ES6', function() {
+      37 |   it('debería retornar una clase', function() {
+    > 38 |     expect(typeof crearClase()).toEqual('function');
+      39 |   });
+      40 |
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:38:33)
+
+  ● clase en ES6 › debería devolver la cantidad de instancias adecuada
+
+    TypeError: Clase is not a constructor
+
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+      42 |    const Clase = crearClase()
+    > 43 |    new Clase()
+      44 |    new Clase()
+      45 |    new Clase()
+      46 |    expect(Clase.contadorInstancias).toEqual(3);
+
+      at Object.<anonymous> (tests/tp.test.js:43:4)
+
+  ● clase en ES6 › Los métodos deberían devolver -1 para un texto no válido
+
+    TypeError: Clase is not a constructor
+
+      49 |   it('Los métodos deberían devolver -1 para un texto no válido', function() {
+      50 |     const Clase = crearClase()
+    > 51 |     const objeto = new Clase()
+      52 |     expect(objeto.contadorPalabras()).toEqual(-1);
+      53 |     expect(objeto.hayNumeros()).toEqual(-1);
+      54 |    });
+
+      at Object.<anonymous> (tests/tp.test.js:51:20)
+
+  ● clase en ES6 › El método contadorPalabras debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      57 |     const Clase = crearClase()
+      58 |
+    > 59 |     let objeto = new Clase('Hola mundo como están')
+      60 |     expect(objeto.contadorPalabras()).toEqual(4);
+      61 |
+      62 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:59:18)
+
+  ● clase en ES6 › El método hayNumeros debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      70 |     const Clase = crearClase()
+      71 |
+    > 72 |     let objeto = new Clase('Hola mundo como están')
+      73 |     expect(objeto.hayNumeros()).toBe(false);
+      74 |
+      75 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:72:18)
+
+Test Suites: 1 failed, 1 total
+Tests:       8 failed, 2 passed, 10 total
+Snapshots:   0 total
+Time:        9.934s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1  (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js (30.423s)
+  contador de vocales
+    √ debería retornar un número (13ms)
+    √ debería retornar un -1 cuando no recibe un string (2ms)
+    √ debería retornar la cantidad de vocales (4ms)
+  url repo github
+    × debería retornar un string (97ms)
+    × debería devolver un repo válido de github (2ms)
+  clase en ES6
+    × debería retornar una clase (3ms)
+    × debería devolver la cantidad de instancias adecuada (3ms)
+    × Los métodos deberían devolver -1 para un texto no válido (3ms)
+    × El método contadorPalabras debe devolver un valor adecuado (2ms)
+    × El método hayNumeros debe devolver un valor adecuado (1ms)
+
+  ● url repo github › debería retornar un string
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "string"
+    Received:
+      "undefined"
+
+      25 | describe('url repo github', function() {
+      26 |  it('debería retornar un string', function() {
+    > 27 |    expect(typeof urlRepo()).toEqual('string');
+      28 |  });
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:27:29)
+
+  ● url repo github › debería devolver un repo válido de github
+
+    TypeError: Cannot read property 'includes' of undefined
+
+      29 |
+      30 |  it('debería devolver un repo válido de github', function() {
+    > 31 |   expect(urlRepo().includes('https://github.com/')).toBe(true);
+      32 |   expect(urlRepo().includes('.git')).toBe(true);
+      33 |  });
+      34 | });
+
+      at Object.<anonymous> (tests/tp.test.js:31:10)
+
+  ● clase en ES6 › debería retornar una clase
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "function"
+    Received:
+      "undefined"
+
+      36 | describe('clase en ES6', function() {
+      37 |   it('debería retornar una clase', function() {
+    > 38 |     expect(typeof crearClase()).toEqual('function');
+      39 |   });
+      40 |
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:38:33)
+
+  ● clase en ES6 › debería devolver la cantidad de instancias adecuada
+
+    TypeError: Clase is not a constructor
+
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+      42 |    const Clase = crearClase()
+    > 43 |    new Clase()
+      44 |    new Clase()
+      45 |    new Clase()
+      46 |    expect(Clase.contadorInstancias).toEqual(3);
+
+      at Object.<anonymous> (tests/tp.test.js:43:4)
+
+  ● clase en ES6 › Los métodos deberían devolver -1 para un texto no válido
+
+    TypeError: Clase is not a constructor
+
+      49 |   it('Los métodos deberían devolver -1 para un texto no válido', function() {
+      50 |     const Clase = crearClase()
+    > 51 |     const objeto = new Clase()
+      52 |     expect(objeto.contadorPalabras()).toEqual(-1);
+      53 |     expect(objeto.hayNumeros()).toEqual(-1);
+      54 |    });
+
+      at Object.<anonymous> (tests/tp.test.js:51:20)
+
+  ● clase en ES6 › El método contadorPalabras debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      57 |     const Clase = crearClase()
+      58 |
+    > 59 |     let objeto = new Clase('Hola mundo como están')
+      60 |     expect(objeto.contadorPalabras()).toEqual(4);
+      61 |
+      62 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:59:18)
+
+  ● clase en ES6 › El método hayNumeros debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      70 |     const Clase = crearClase()
+      71 |
+    > 72 |     let objeto = new Clase('Hola mundo como están')
+      73 |     expect(objeto.hayNumeros()).toBe(false);
+      74 |
+      75 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:72:18)
+
+Test Suites: 1 failed, 1 total
+Tests:       7 failed, 3 passed, 10 total
+Snapshots:   0 total
+Time:        73.358s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1  (prep@1.0.0)
+λ git add .
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1  (prep@1.0.0)
+λ git init
+Initialized empty Git repository in C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/.git/
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (master) (prep@1.0.0)
+λ git add .
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package-lock.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in tests/tp.test.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in tp.js.
+The file will have its original line endings in your working directory
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (master) (prep@1.0.0)
+λ git commit -m "Primer commit, la función contarVocales pasó el test"
+[master (root-commit) b98726d] Primer commit, la función contarVocales pasó el test
+ 6 files changed, 5721 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 tests/tp.test.js
+ create mode 100644 tp.js
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (master) (prep@1.0.0)
+λ git branch -M main
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main) (prep@1.0.0)
+λ git remote add origin https://github.com/LeandroLobo/TP1DesaFizzmod2021.git
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main) (prep@1.0.0)
+λ git push -u origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 52.28 KiB | 2.27 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LeandroLobo/TP1DesaFizzmod2021.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  contador de vocales
+    √ debería retornar un número (16ms)
+    √ debería retornar un -1 cuando no recibe un string (2ms)
+    √ debería retornar la cantidad de vocales (3ms)
+  url repo github
+    √ debería retornar un string (6ms)
+    √ debería devolver un repo válido de github (2ms)
+  clase en ES6
+    × debería retornar una clase (70ms)
+    × debería devolver la cantidad de instancias adecuada (3ms)
+    × Los métodos deberían devolver -1 para un texto no válido (4ms)
+    × El método contadorPalabras debe devolver un valor adecuado (3ms)
+    × El método hayNumeros debe devolver un valor adecuado (4ms)
+
+  ● clase en ES6 › debería retornar una clase
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      "function"
+    Received:
+      "undefined"
+
+      36 | describe('clase en ES6', function() {
+      37 |   it('debería retornar una clase', function() {
+    > 38 |     expect(typeof crearClase()).toEqual('function');
+      39 |   });
+      40 |
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:38:33)
+
+  ● clase en ES6 › debería devolver la cantidad de instancias adecuada
+
+    TypeError: Clase is not a constructor
+
+      41 |   it('debería devolver la cantidad de instancias adecuada', function() {
+      42 |    const Clase = crearClase()
+    > 43 |    new Clase()
+      44 |    new Clase()
+      45 |    new Clase()
+      46 |    expect(Clase.contadorInstancias).toEqual(3);
+
+      at Object.<anonymous> (tests/tp.test.js:43:4)
+
+  ● clase en ES6 › Los métodos deberían devolver -1 para un texto no válido
+
+    TypeError: Clase is not a constructor
+
+      49 |   it('Los métodos deberían devolver -1 para un texto no válido', function() {
+      50 |     const Clase = crearClase()
+    > 51 |     const objeto = new Clase()
+      52 |     expect(objeto.contadorPalabras()).toEqual(-1);
+      53 |     expect(objeto.hayNumeros()).toEqual(-1);
+      54 |    });
+
+      at Object.<anonymous> (tests/tp.test.js:51:20)
+
+  ● clase en ES6 › El método contadorPalabras debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      57 |     const Clase = crearClase()
+      58 |
+    > 59 |     let objeto = new Clase('Hola mundo como están')
+      60 |     expect(objeto.contadorPalabras()).toEqual(4);
+      61 |
+      62 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:59:18)
+
+  ● clase en ES6 › El método hayNumeros debe devolver un valor adecuado
+
+    TypeError: Clase is not a constructor
+
+      70 |     const Clase = crearClase()
+      71 |
+    > 72 |     let objeto = new Clase('Hola mundo como están')
+      73 |     expect(objeto.hayNumeros()).toBe(false);
+      74 |
+      75 |     objeto = new Clase('')
+
+      at Object.<anonymous> (tests/tp.test.js:72:18)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 5 passed, 10 total
+Snapshots:   0 total
+Time:        10.061s, estimated 31s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ git commit -a
+warning: LF will be replaced by CRLF in tp.js.
+The file will have its original line endings in your working directory
+[main af0767c] función urlRepo() pasó los test
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 394 bytes | 98.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/LeandroLobo/TP1DesaFizzmod2021.git
+   b98726d..af0767c  main -> main
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (35:28)
+        33 | */
+        34 | const crearClase = () => class Retorno {
+      > 35 |   static contadorInstancias = 0;
+           |                             ^
+        36 |   constructor(texto = '') {
+        37 |     this.texto = texto;
+        38 |     Retorno.contadorInstancias++;
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        63.718s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ node .
+internal/modules/cjs/loader.js:311
+      throw err;
+      ^
+
+Error: Cannot find module 'C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1\index.js'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (internal/modules/cjs/loader.js:303:19)
+    at Function.Module._findPath (internal/modules/cjs/loader.js:516:18)
+    at resolveMainPath (internal/modules/run_main.js:12:25)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:66:24)
+    at internal/main/run_main_module.js:17:47 {
+  code: 'MODULE_NOT_FOUND',
+  path: 'C:\\Users\\Leandro Lobo\\Documents\\LOBO\\Cursos\\Desafizzmod2021\\AcademyFizzmod-20210331T181921Z-001\\AcademyFizzmod\\TPs\\TP1\\package.json',
+  requestPath: 'C:\\Users\\Leandro Lobo\\Documents\\LOBO\\Cursos\\Desafizzmod2021\\AcademyFizzmod-20210331T181921Z-001\\AcademyFizzmod\\TPs\\TP1'
+}
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ node .
+0
+1
+perro que ladra no muerde
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (35:28)
+        33 | */
+        34 | const crearClase = () => class Retorno {
+      > 35 |   static contadorInstancias = 0;
+           |                             ^
+        36 |   constructor(texto = '') {
+        37 |     this.texto = texto;
+        38 |     Retorno.contadorInstancias++;
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.338s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ node .
+0
+1
+perro que ladra no muerde
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (44:28)
+        42 | */
+        43 | const crearClase = () => class Retorno {
+      > 44 |   static contadorInstancias = 0;
+           |                             ^
+        45 |   constructor(texto = '') {
+        46 |     this.texto = texto;
+        47 |     Retorno.contadorInstancias++;
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.423s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  contador de vocales
+    √ debería retornar un número (14ms)
+    √ debería retornar un -1 cuando no recibe un string (1ms)
+    √ debería retornar la cantidad de vocales (4ms)
+  url repo github
+    √ debería retornar un string (4ms)
+    √ debería devolver un repo válido de github (2ms)
+  clase en ES6
+    √ debería retornar una clase (1ms)
+    × debería devolver la cantidad de instancias adecuada (89ms)
+    × Los métodos deberían devolver -1 para un texto no válido (27ms)
+    × El método contadorPalabras debe devolver un valor adecuado (3ms)
+    × El método hayNumeros debe devolver un valor adecuado (2ms)
+
+  ● clase en ES6 › debería devolver la cantidad de instancias adecuada
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      3
+    Received:
+      NaN
+
+      44 |    new Clase()
+      45 |    new Clase()
+    > 46 |    expect(Clase.contadorInstancias).toEqual(3);
+      47 |   });
+      48 |
+      49 |   it('Los métodos deberían devolver -1 para un texto no válido', function() {
+
+      at Object.<anonymous> (tests/tp.test.js:46:37)
+
+  ● clase en ES6 › Los métodos deberían devolver -1 para un texto no válido
+
+    TypeError: objeto.contadorPalabras is not a function
+
+      50 |     const Clase = crearClase()
+      51 |     const objeto = new Clase()
+    > 52 |     expect(objeto.contadorPalabras()).toEqual(-1);
+      53 |     expect(objeto.hayNumeros()).toEqual(-1);
+      54 |    });
+      55 |
+
+      at Object.<anonymous> (tests/tp.test.js:52:19)
+
+  ● clase en ES6 › El método contadorPalabras debe devolver un valor adecuado
+
+    TypeError: objeto.contadorPalabras is not a function
+
+      58 |
+      59 |     let objeto = new Clase('Hola mundo como están')
+    > 60 |     expect(objeto.contadorPalabras()).toEqual(4);
+      61 |
+      62 |     objeto = new Clase('')
+      63 |     expect(objeto.contadorPalabras()).toEqual(0);
+
+      at Object.<anonymous> (tests/tp.test.js:60:19)
+
+  ● clase en ES6 › El método hayNumeros debe devolver un valor adecuado
+
+    TypeError: objeto.hayNumeros is not a function
+
+      71 |
+      72 |     let objeto = new Clase('Hola mundo como están')
+    > 73 |     expect(objeto.hayNumeros()).toBe(false);
+      74 |
+      75 |     objeto = new Clase('')
+      76 |     expect(objeto.hayNumeros()).toBe(false);
+
+      at Object.<anonymous> (tests/tp.test.js:73:19)
+
+  console.log tp.js:52
+    undefined
+
+  console.log tp.js:54
+    NaN
+
+  console.log tp.js:55
+    perro que ladra no muerde
+
+Test Suites: 1 failed, 1 total
+Tests:       4 failed, 6 passed, 10 total
+Snapshots:   0 total
+Time:        4.89s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ node .
+number 0
+number 1
+perro que ladra no muerde
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (44:28)
+        42 | */
+        43 | const crearClase = () => class Retorno {
+      > 44 |   static contadorInstancias = 0;
+           |                             ^
+        45 |   constructor(texto = '') {
+        46 |     this.texto = texto;
+        47 |     Retorno.contadorInstancias++;
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.284s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (44:28)
+        42 | */
+        43 | const crearClase = () => class Retorno {
+      > 44 |   static contadorInstancias = 0;
+           |                             ^
+        45 |   constructor(texto = '') {
+        46 |     this.texto = texto;
+        47 |   }
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        4.357s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (49:28)
+        47 |   }
+        48 |
+      > 49 |   static contadorInstancias = 0;
+           |                             ^
+        50 | }
+        51 |
+        52 | const Clase = crearClase()
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.512s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (50:28)
+        48 |   }
+        49 |
+      > 50 |   static contadorInstancias = 0;
+           |                             ^
+        51 | }
+        52 |
+        53 | const Clase = crearClase()
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.761s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ npm test
+
+> prep@1.0.0 test C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1
+> jest --collectCoverage=false tp.test.js
+
+ FAIL  tests\tp.test.js
+  ● Test suite failed to run
+
+    C:/Users/Leandro Lobo/Documents/LOBO/Cursos/Desafizzmod2021/AcademyFizzmod-20210331T181921Z-001/AcademyFizzmod/TPs/TP1/tp.js: Unexpected token (45:28)
+        43 | const crearClase = () => class Retorno {
+        44 |
+      > 45 |   static contadorInstancias = 0;
+           |                             ^
+        46 |
+        47 |   constructor(texto = '') {
+        48 |     this.texto = texto;
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        9.98s
+Ran all test suites matching /tp.test.js/i.
+npm ERR! Test failed.  See above for more details.
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ node .
+
+  function ContarVocales():
+  "Hola mundo" returns: 4,
+  "HOlA mundó" returns: 3,
+  "Hl mnd" returns: 0,
+  "": 0,
+  null returns: -1
+
+number 0
+number 1
+perro que ladra no muerde
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ git add .
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in tp.js.
+The file will have its original line endings in your working directory
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ git commit -m "la función CrearClase() tiene errores en el test, pero son errores supuestos de sintaxis del código, aunque la función se ejecuta correctamente"
+[main 2728bd1] la función CrearClase() tiene errores en el test, pero son errores supuestos de sintaxis del código, aunque la función se ejecuta correctamente
+ 2 files changed, 34 insertions(+), 14 deletions(-)
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 782 bytes | 391.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/LeandroLobo/TP1DesaFizzmod2021.git
+   af0767c..2728bd1  main -> main
+
+C:\Users\Leandro Lobo\Documents\LOBO\Cursos\Desafizzmod2021\AcademyFizzmod-20210331T181921Z-001\AcademyFizzmod\TPs\TP1 (main -> origin) (prep@1.0.0)
+λ

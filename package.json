@@ -1,8 +1,8 @@
 {
       "name": "prep",
       "version": "1.0.0",
-      "description": "",
-      "main": "index.js",
+      "description": "Trabajo Práctico #1",
+      "main": "tp.js",
       "scripts": {
             "test": "jest --collectCoverage=false tp.test.js"
       },
@@ -10,7 +10,7 @@
             "eslint": "^4.13.1",
             "jest": "^22.0.3"
       },
-      "author": "",
+      "author": "Leandro Lobo",
       "license": "ISC",
       "jest": {
             "testURL": "http://localhost/"

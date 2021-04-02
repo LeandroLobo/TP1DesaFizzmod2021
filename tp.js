@@ -41,12 +41,10 @@ En ambos métodos, si el texto no es válido, se devolverá -1
 Crear un propiedad estática contadorInstancias que me indique cuantas instancias hay de esa clase.
 */
 const crearClase = () => class Retorno {
-
-  static contadorInstancias = 0;
   
   constructor(texto) {
     this.texto = (typeof texto === 'string') ? texto : -1;
-    Retorno.contadorInstancias++;
+    Retorno.contadorInstancias = (Retorno.contadorInstancias || 0 ) +1
   }
 
   contadorPalabras() {
